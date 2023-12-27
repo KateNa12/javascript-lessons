@@ -1,0 +1,15 @@
+var measure = "hour"; // hour, kg, km 
+var quantity = 1;
+switch (measure) {
+    case "km":
+        console.log(quantity * 1000 + " m");
+        break;
+    case "hour":
+        console.log(quantity * 60 + " minutes");
+        break;
+    case "kg":
+        console.log(quantity * 1000 + " gr");
+        break;
+    default:
+        console.log('Please, enter the valid unit of measurement: kg/hour/km');
+        break;
