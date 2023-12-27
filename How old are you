@@ -1,0 +1,13 @@
+var year = prompt("Вкажіть ваш рік");
+year = Number(year);
+if (!year || year < 0) {
+    console.log ("Invalid data!")
+} else if(year % 100 >= 5 && year % 100 <= 20) {
+    console.log(year + " років")
+} else if ( year % 10 === 2 || year % 10 === 3 ||  year % 10 === 4) {
+    console.log(year + " роки")
+} else if ( year % 10 === 1) {
+    console.log(year + " рік")
+} else {
+    console.log(year + " років")
+}
