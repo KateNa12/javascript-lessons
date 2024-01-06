@@ -1,0 +1,52 @@
+// ДЗ1
+//Перший метод//
+
+function drawTriangle(h, symbol){
+    for (var i = 0; i < h; i++) {
+        var line = "";
+        for(var j = 0; j < i+1; j++){
+            line+=symbol
+        }
+        console.log(line);
+    }
+}
+drawTriangle(5,"*");
+
+// ДЗ1
+//Другий метод//
+
+function drawTriangleWhile(h,symbol){
+    var i = 0;
+    while (i < h){
+        i++;
+        var line = "";
+        var j = 0;
+        while (j < i){
+            j++;
+            line+=symbol
+        }
+        console.log(line);
+    }
+}
+drawTriangleWhile(5,"+");
+
+// ДЗ 2 //
+
+var sum = 0;
+for(var i = 1; i<=100; i++) {
+    if (i % 3 != 0) {
+        sum += i;
+    }
+}
+console.log(sum);
+
+// ДЗ 3 //
+
+function pow(x, y) {
+    var result = 1;
+    for(var i = 0; i < y; i++) {
+        result *= x;
+    }
+    console.log(result);
+}
+pow(2, 4);
