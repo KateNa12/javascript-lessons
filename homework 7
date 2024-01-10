@@ -1,0 +1,54 @@
+//ДЗ №1//
+function newIsNaN(value) {
+    return String(Number(value)) == String(NaN)
+}
+
+console.log(newIsNaN(1) + " " + isNaN(1) + " " + Number.isNaN(1));
+console.log(newIsNaN("1") + " " + isNaN("1") + " " + Number.isNaN("1"));
+console.log(newIsNaN("1.m") + " " + isNaN("1.m") + " " + Number.isNaN("1.m"));
+console.log(newIsNaN(NaN) + " " + isNaN(NaN) + " " + Number.isNaN(NaN));
+console.log(newIsNaN(null) + " " + isNaN(null) + " " + Number.isNaN(null));
+console.log(newIsNaN(undefined) + " " + isNaN(undefined) + " " + Number.isNaN(undefined));
+console.log(newIsNaN(new Date()) + " " + isNaN(new Date()) + " " + Number.isNaN(new Date()));
+
+
+//ДЗ №2//
+function pad(input, count, symbol, isStart){
+    let res = input;
+    for(let i=input.length; i < count; i++){
+        if(isStart){
+            res = symbol + res;
+        } else {
+            res = res + symbol;
+        }
+    }
+    return res;
+}
+
+let result = pad("12345", 6, "*", 0);
+console.log(result);
+
+//ДЗ №3//
+
+function newCheckProbabilityTheory(count){
+    let pairNamber = 0;
+    let unpairNamber = 0;
+    for(let i = 0; i < count; i++){
+        let rnd = Math.random();
+        rnd = (rnd*900) + 100;
+        rnd = Math.round(rnd);
+        if(rnd % 2 == 0){
+            pairNamber++;
+        } else {
+            unpairNamber++;
+        }
+    } 
+    
+    console.log(count);
+    console.log("count of pair numbers: " + pairNamber);
+    console.log("count of unpair numbers: " + unpairNamber);
+    console.log("pair: " + Math.round((pairNamber / count)*100) + "% unpair: " + Math.round((unpairNamber / count)*100) + "%");
+         
+}
+newCheckProbabilityTheory(109);
+
