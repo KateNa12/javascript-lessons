@@ -1,0 +1,68 @@
+//ДЗ №1//
+
+var kidsToy = {
+    name: "House",
+    producer: "Indonesia",
+    price: "300 $",
+    getInfo: function () {
+        //  console.log(this);
+        for (let key in this) {
+            let value = this[key];
+            if (typeof value != "function") {
+                console.log(key + ': ' + this[key]);
+            }           
+        }
+    }
+}
+
+kidsToy.getInfo();
+kidsToy.age = "3+";
+kidsToy.getInfo();
+
+
+//ДЗ №2//
+
+var services = {
+	"стрижка": "60.80 грн",
+	"гоління": "80.45 грн",
+	"Миття голови": "100.15 грн",
+
+    minPrice: function() {
+        let result = Infinity;
+        for(let service in this) {
+            let price = Number.parseFloat(this[service]);
+            if(!Number.isNaN(price) && price < result) {
+                result = price;
+            }
+        }
+        return result;
+    },
+
+    maxPrice: function() {
+        let result = 0;
+        for(let service in this) {
+            let price = Number.parseFloat(this[service]);
+            if(!Number.isNaN(price) && price > result) {
+                result = price;
+            }
+        }
+        return result;
+    },
+
+    totalPrice: function() {
+        let result = 0;
+        for(let service in this) {
+            let price = Number.parseFloat(this[service]);
+            if(!Number.isNaN(price)) {
+                result += price;
+            }
+        }
+        return result;
+    }
+};
+
+console.log("min: " + services.minPrice());
+console.log("max: " + services.maxPrice());
+console.log("total: " + services.totalPrice());
+services['Розбити скло'] = "200.25 грн";
+console.log("total: " + services.totalPrice());
