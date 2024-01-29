@@ -6,8 +6,8 @@ var result = null + 3; // null - це пусте значення, нічого 
 console.log(result); // результат: 3
 
 var result = 5 && "qwerty"; // && - Логічний оператор "АБО" (OR).Повертає true, якщо обидва операнди є true, інакше повертає false. 
-// В данному випадку повертає стрінг, так як змінна result вважається стрінгом.
-console.log(result); // результат: qwerty
+// В данному випадку 5 - це не нульове число, яке відповідає true,  "qwerty" - не пуста строкк, яка також відповідає true. Отже, true && true => true. 
+console.log(result); // результат: true
 
 var result = +'40' + +'2' + "hillel"; // Відбувається конкатенація з одночасним складанням 40 та 2 тому, що перед ними стоїть унарний '+'.
 console.log(result); // результат: 42hillel
@@ -44,7 +44,11 @@ console.log(result); // результат: false
 var result =  3 ** (9 / 3); // ** - це зведення у ступінь. Тут спочатку 9 ділеться на 3 = 3. Потім 3 возводиться у ступінь 3.
 console.log(result); // результат: 27
 
-var result = !!'false' == !!'true'; // Оператор строгої нерівності. False is not true.
+var result = !!'false' == !!'true'; // "false" відповідає non empty string, а true => double negation true => true.
+
+!!'true' => non empty string => true => double negation true => true
+
+Отже, true == true, тобто результат: true
 console.log(result); // результат: true
 
 var result = 0 || '0' && 1 // Пріоритет оператора І && більше, ніж АБО ||, тому він виконується раніше.
