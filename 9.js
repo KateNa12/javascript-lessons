@@ -61,11 +61,18 @@ const company = {
     ],
     findValueByKey: function(companyName) {
         if(this.name == companyName) {
-            return console.log(this);
+            console.log("name: " + this.name);
+            console.log("type: " + this.type); 
+            console.log("platform: " + this.platform); 
+            console.log("sellsSolution: " + this.sellsSolution);
+            return;
         }
         let result = this.findValueByKeyInArr(companyName, this.clients);
         if(result != null) {
-            console.log(result);
+            console.log("name: " + result.name);
+            console.log("type: " + result.type); 
+            console.log("uses: " + result.uses); 
+            console.log("sells: " + result.sells);
         } else {
             console.log('No such company');
         }
